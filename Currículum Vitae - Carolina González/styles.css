@@ -17,8 +17,9 @@ body {
 }
 
 .sidebar {
+    /*background: #650065;*/
     background: #650065;
-    color: white;
+    color: #fff;
     padding: 20px;
     width: 35%;
     text-align: center;
@@ -31,11 +32,6 @@ body {
     object-fit: cover;
 }
 
-.sidebar h1 {
-    font-size: 22px;
-    margin: 10px 0;
-}
-
 .sidebar p {
     font-size: 14px;
 }
@@ -43,8 +39,9 @@ body {
 .sidebar h2 {
     margin-top: 20px;
     font-size: 18px;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #fff;
     padding-bottom: 5px;
+    font-size: 20pt;
 }
 
 .sidebar ul {
@@ -61,11 +58,18 @@ body {
     width: 65%;
 }
 
+.container h1 {
+    font-size: 30pt;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
 .main-content h2 {
-    font-size: 20px;
+    font-size: 20pt;
     border-bottom: 2px solid #650065;
     padding-bottom: 5px;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .main-content p {
@@ -73,7 +77,6 @@ body {
 }
 
 a {
-    color: white;
+    color: #fff;
     text-decoration: none;
 }
-
