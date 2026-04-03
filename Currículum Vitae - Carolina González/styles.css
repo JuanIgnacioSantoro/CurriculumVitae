@@ -1,3 +1,22 @@
+@media print {
+    .sidebar {
+        background: white;
+        color: #000;
+    }
+    
+    .sidebar h2 {
+        border-bottom: 1px solid black;
+    }
+    
+    .main-content h2 {
+        border-bottom: 2px solid white;    
+    }
+    
+    a {
+        color: black;
+    }
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -17,9 +36,8 @@ body {
 }
 
 .sidebar {
-    /*background: #650065;*/
     background: #650065;
-    color: #fff;
+    color: white;
     padding: 20px;
     width: 35%;
     text-align: center;
@@ -39,7 +57,7 @@ body {
 .sidebar h2 {
     margin-top: 20px;
     font-size: 18px;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid white;
     padding-bottom: 5px;
     font-size: 20pt;
 }
@@ -60,6 +78,7 @@ body {
 
 .container h1 {
     font-size: 30pt;
+    margin-top: 50px;
     margin-bottom: 30px;
     text-align: center;
 }
@@ -77,6 +96,6 @@ body {
 }
 
 a {
-    color: #fff;
+    color: white;
     text-decoration: none;
 }
