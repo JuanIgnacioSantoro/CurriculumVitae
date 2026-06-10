@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Valentina Repettur</title>
+    <!-- Importación de Font Awesome para los iconos estilizados -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .cv-container {
+            background-color: #ffffff;
+            width: 800px;
+            min-height: 1000px;
+            display: flex;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        /* --- COLUMNA IZQUIERDA (Sidebar Rosa) --- */
+        .sidebar {
+            background-color: #d98282;
+            color: #ffffff;
+            width: 35%;
+            padding: 40px 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-img-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #ffffff;
+            margin-bottom: 25px;
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .name-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+            padding-bottom: 20px;
+            width: 100%;
+        }
+
+        .sidebar-section {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .sidebar-title {
+            font-size: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Contenedor circular para los iconos del sidebar */
+        .icon-circle-white {
+            background-color: #ffffff;
+            color: #d98282;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        .sidebar-section ul {
+            list-style: none;
+        }
+
+        .sidebar-section li {
+            font-size: 13px;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info .icon-net {
+            font-size: 14px;
+            width: 16px;
+            text-align: center;
+        }
+
+        .skills-list li {
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .skills-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #ffffff;
+        }
+
+        /* --- COLUMNA DERECHA (Contenido Principal) --- */
+        .main-content {
+            background-color: #fbf6f3;
+            width: 65%;
+            padding: 40px 35px;
+            color: #333333;
+        }
+
+        .main-section {
+            margin-bottom: 35px;
+        }
+
+        .main-title {
+            font-size: 17px;
+            font-weight: bold;
+            color: #111111;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Contenedor circular para los iconos de la sección principal */
+        .icon-circle-dark {
+            background-color: #d98282;
+            color: #ffffff;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #d98282;
+            margin-bottom: 15px;
+        }
+
+        .objective-text {
+            font-size: 13.5px;
+            line-height: 1.6;
+            text-align: justify;
+            color: #444444;
+        }
+
+        /* Estilos de Experiencia */
+        .job-item {
+            margin-bottom: 25px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-size: 14.5px;
+            margin-bottom: 8px;
+        }
+
+        .job-title {
+            font-weight: bold;
+            position: relative;
+            padding-left: 18px;
+        }
+
+        /* Punto indicador rosa de la lista de trabajos */
+        .job-title::before {
+            content: "●";
+            position: absolute;
+            left: 0;
+            color: #d98282;
+            font-size: 11px;
+            top: -1px;
+        }
+
+        .job-company {
+            font-weight: normal;
+            color: #222222;
+        }
+
+        .job-date {
+            font-size: 13px;
+            color: #555555;
+            font-weight: 500;
+        }
+
+        .job-verifiable {
+            font-size: 12px;
+            color: #666666;
+            font-style: italic;
+        }
+
+        .job-details {
+            list-style: none;
+            padding-left: 18px;
+        }
+
+        .job-details li {
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 4px;
+            position: relative;
+            padding-left: 12px;
+            color: #444444;
+        }
+
+        .job-details li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #333333;
+        }
+
+        /* Estilos de Educación e Info Adicional */
+        .edu-item {
+            margin-bottom: 15px;
+        }
+
+        .edu-title {
+            font-weight: bold;
+            font-size: 14px;
+            color: #222222;
+        }
+
+        .edu-desc {
+            font-size: 13px;
+            color: #555555;
+            margin-top: 2px;
+        }
+
+        .additional-text {
+            font-size: 13.5px;
+            color: #333333;
+        }
+        
+        /* Links */
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        
+        <!-- COLUMNA IZQUIERDA -->
+        <aside class="sidebar">
+            <div class="profile-img-container">
+                <img src="./foto_recortada.jpg" alt="Valentina Repettur">
+            </div>
+            
+            <h1 class="name-title">Valentina<br>Repettur</h1>
+            
+            <!-- CONTACTO -->
+            <div class="sidebar-section">
+                <h2 class="sidebar-title">
+                    <div class="icon-circle-white"><i class="fa-solid fa-user"></i></div>
+                    Contacto
+                </h2>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fa-solid fa-envelope icon-net"></i>
+                        <span><a href="mailto:valentinasalomon634@gmail.com">valentinasalomon634@gmail.com</a></span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone icon-net"></i>
+                        <span><a href="https://wa.me/+5493487630749">3487 630749</a></span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot icon-net"></i>
+                        <span><a href="https://share.google/p2dTvfJP0zO6EoaIa">Castelli 3000, Zárate</a></span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- DATOS PERSONALES -->
+            <div class="sidebar-section">
+                <h2 class="sidebar-title">
+                    <div class="icon-circle-white"><i class="fa-solid fa-user"></i></div>
+                    Datos Personales
+                </h2>
+                <ul>
+                    <li><strong>Fecha de nacimiento:</strong><br>27/01/2006</li>
+                    <li style="margin-top: 10px;"><strong>Estado civil:</strong><br>Soltera</li>
+                    <li style="margin-top: 10px;"><strong>Nacionalidad:</strong><br>Argentina</li>
+                </ul>
+            </div>
+            
+            <!-- HABILIDADES -->
+            <div class="sidebar-section">
+                <h2 class="sidebar-title">
+                    <div class="icon-circle-white"><i class="fa-solid fa-star"></i></div>
+                    Habilidades
+                </h2>
+                <ul class="skills-list">
+                    <li>Atención al cliente</li>
+                    <li>Ventas y asesoramiento</li>
+                    <li>Manejo de caja registradora</li>
+                    <li>Limpieza y mantenimiento de espacios</li>
+                    <li>Organización y responsabilidad</li>
+                    <li>Trabajo en equipo</li>
+                    <li>Resolución de conflictos</li>
+                    <li>Comunicación efectiva</li>
+                    <li>Adaptabilidad y aprendizaje rápido</li>
+                </ul>
+            </div>
+        </aside>
+        
+        <!-- COLUMNA DERECHA -->
+        <main class="main-content">
+            
+            <!-- OBJETIVO PROFESIONAL -->
+            <section class="main-section">
+                <h2 class="main-title">
+                    <div class="icon-circle-dark"><i class="fa-solid fa-user"></i></div>
+                    Objetivo Profesional
+                </h2>
+                <div class="divider"></div>
+                <p class="objective-text">
+                    Persona responsable, organizada y con experiencia en atención al cliente, manejo de caja, cuidado de niños y tareas de limpieza. Me destaco por mi compromiso, buena predisposición para el trabajo en equipo y capacidad para adaptarme a diferentes tareas. Busco incorporarme a una empresa donde pueda aportar mis conocimientos y seguir desarrollándome profesionalmente.
+                </p>
+            </section>
+            
+            <!-- EXPERIENCIA LABORAL -->
+            <section class="main-section">
+                <h2 class="main-title">
+                    <div class="icon-circle-dark"><i class="fa-solid fa-briefcase"></i></div>
+                    Experiencia Laboral
+                </h2>
+                <div class="divider"></div>
+                
+                <!-- Puesto 1 -->
+                <div class="job-item">
+                    <div class="job-header">
+                        <span class="job-title">Cajera <span class="job-company">| Supermercado (Super Su)</span></span>
+                        <span class="job-date">2023 - 2024</span>
+                    </div>
+                    <ul class="job-details">
+                        <li>Atención al cliente y manejo de caja registradora.</li>
+                        <li>Cobro en efectivo, débito y crédito.</li>
+                        <li>Reposición y control de stock.</li>
+                        <li>Resolución de consultas y reclamos.</li>
+                    </ul>
+                </div>
+                
+                <!-- Puesto 2 -->
+                <div class="job-item">
+                    <div class="job-header">
+                        <span class="job-title">Niñera <span class="job-company">| Casa de Familia</span></span>
+                        <span class="job-date">2021 - 2025</span>
+                    </div>
+                    <ul class="job-details">
+                        <li>Cuidado y supervisión de niños.</li>
+                        <li>Organización de actividades recreativas y educativas.</li>
+                        <li>Acompañamiento en rutinas diarias.</li>
+                        <li>Responsabilidad y atención personalizada.</li>
+                    </ul>
+                </div>
+                
+                <!-- Puesto 3 -->
+                <div class="job-item">
+                    <div class="job-header">
+                        <span class="job-title">Personal de Limpieza <span class="job-company">| Casas de Familia</span></span>
+                        <span class="job-verifiable">Experiencia comprobable</span>
+                    </div>
+                    <ul class="job-details">
+                        <li>Limpieza y mantenimiento general de ambientes.</li>
+                        <li>Orden y organización de espacios.</li>
+                        <li>Higienización de baños, cocinas y áreas comunes.</li>
+                        <li>Responsabilidad, puntualidad y atención al detalle.</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- EDUCACIÓN -->
+            <section class="main-section">
+                <h2 class="main-title">
+                    <div class="icon-circle-dark"><i class="fa-solid fa-graduation-cap"></i></div>
+                    Educación
+                </h2>
+                <div class="divider"></div>
+                
+                <div class="edu-item">
+                    <div class="edu-title">E.S.B. N.° 13</div>
+                    <div class="edu-desc">Secundario completo (2024)</div>
+                </div>
+                
+                <div class="edu-item">
+                    <div class="edu-title">E.E.B. N.° 28</div>
+                    <div class="edu-desc">Primario completo</div>
+                </div>
+            </section>
+            
+            <!-- INFORMACIÓN ADICIONAL -->
+            <section class="main-section">
+                <h2 class="main-title">
+                    <div class="icon-circle-dark"><i class="fa-solid fa-star"></i></div>
+                    Información Adicional
+                </h2>
+                <div class="divider"></div>
+                <p class="additional-text">
+                    Disponibilidad horaria full time o part time.
+                </p>
+            </section>
+            
+        </main>
+        
+    </div>
+
+</body>
+</html>
